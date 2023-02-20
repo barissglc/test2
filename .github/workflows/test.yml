@@ -1,10 +1,110 @@
-- name: Test bol function
-  run: |
-    output=$(printf "10\n2\n" | ./fonksiyon)
-    if [[ $(echo "$output" | awk '{print $4}') == "5.00" ]]; then
-      echo "Bol function test passed"
-    else
-      echo "Bol function test failed"
-      echo "$output"
-      exit 1
-    fi
+name: Test
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install GCC
+      run: sudo apt-get install -y gcc
+
+    - name: Compile program
+      run: gcc fonksiyon.c -o fonksiyon
+
+    - name: Test topla function
+      run: |
+        output=$(printf "10\n2\n" | ./fonksiyon)
+        if [[ "$output" == "12" ]]; then
+          echo "Topla function test passed"
+        else
+          echo "Topla function test failed"
+          echo "$output"
+          exit 1
+        fi
+
+    - name: Test cikar function
+      run: |
+        output=$(printf "10\n2\n" | ./fonksiyon)
+        if [[ "$output" == "8" ]]; then
+          echo "Cikar function test passed"
+        else
+          echo "Cikar function test failed"
+          echo "$output"
+          exit 1
+        fi
+
+    - name: Test carp function
+      run: |
+        output=$(printf "10\n2\n" | ./fonksiyon)
+        if [[ "$output" == "20" ]]; then
+          echo "Carp function test passed"
+        else
+          echo "Carp function test failed"
+          echo "$output"
+          exit 1
+        fi
+
+    name: Test
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install GCC
+      run: sudo apt-get install -y gcc
+
+    - name: Compile program
+      run: gcc fonksiyon.c -o fonksiyon
+
+    - name: Test topla function
+      run: |
+        output=$(printf "10\n2\n" | ./fonksiyon)
+        if [[ "$output" == "12" ]]; then
+          echo "Topla function test passed"
+        else
+          echo "Topla function test failed"
+          echo "$output"
+          exit 1
+        fi
+
+    - name: Test cikar function
+      run: |
+        output=$(printf "10\n2\n" | ./fonksiyon)
+        if [[ "$output" == "8" ]]; then
+          echo "Cikar function test passed"
+        else
+          echo "Cikar function test failed"
+          echo "$output"
+          exit 1
+        fi
+
+    - name: Test carp function
+      run: |
+        output=$(printf "10\n2\n" | ./fonksiyon)
+        if [[ "$output" == "20" ]]; then
+          echo "Carp function test passed"
+        else
+          echo "Carp function test failed"
+          echo "$output"
+          exit 1
+        fi
+
+    - name: Test bol function
+      run: |
+        output=$(printf "10\n2\n" | ./fonksiyon)
+        if [[ "$output" == "5.00" ]]; then
+          echo "Bol function test passed"
+        else
+          echo "Bol function test failed"
+          echo "$output"
+          exit 1
+        fi
