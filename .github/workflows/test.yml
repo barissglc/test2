@@ -17,7 +17,7 @@ jobs:
 
     - name: Test topla function
       run: |
-        output=$(echo -e "10\n2\n" | ./fonksiyon)
+        output=$(printf "10\n2\n" | ./fonksiyon)
         if [[ "$output" == "12" ]]; then
           echo "Topla function test passed"
         else
@@ -28,7 +28,7 @@ jobs:
 
     - name: Test cikar function
       run: |
-        output=$(echo -e "10\n2\n" | ./fonksiyon)
+        output=$(printf "10\n2\n" | ./fonksiyon)
         if [[ "$output" == "8" ]]; then
           echo "Cikar function test passed"
         else
@@ -39,7 +39,7 @@ jobs:
 
     - name: Test carp function
       run: |
-        output=$(echo -e "10\n2\n" | ./fonksiyon)
+        output=$(printf "10\n2\n" | ./fonksiyon)
         if [[ "$output" == "20" ]]; then
           echo "Carp function test passed"
         else
@@ -50,7 +50,7 @@ jobs:
 
     - name: Test bol function
       run: |
-        output=$(echo -e "10\n2\n" | ./fonksiyon)
+        output=$(printf "10\n2\n" | ./fonksiyon)
         if [[ "$output" == "5.00" ]]; then
           echo "Bol function test passed"
         else
