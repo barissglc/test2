@@ -13,11 +13,11 @@ jobs:
       run: sudo apt-get install -y gcc
 
     - name: Compile program
-      run: gcc -o program main.c fonksiyon.c
+      run: gcc -o program fonksiyon fonksiyon.c
 
     - name: Test topla function
       run: |
-        output=$(echo -e "10\n2\n" | ./program)
+        output=$(echo -e "10\n2\n" | ./fonksiyon)
         if [[ "$output" == "10 + 2 = 12" ]]; then
           echo "Topla function test passed"
         else
