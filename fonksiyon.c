@@ -26,8 +26,13 @@ float bol(float sayi1, float sayi2) {
 }
 
 int main() {
-    int sayi1 = 10;
-    int sayi2 = 2;
+    int sayi1, sayi2;
+
+    printf("1. sayiyi girin: ");
+    scanf("%d", &sayi1);
+
+    printf("2. sayiyi girin: ");
+    scanf("%d", &sayi2);
 
     // Toplama işlemi
     int sonuc1 = topla(sayi1, sayi2);
