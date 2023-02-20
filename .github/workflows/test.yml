@@ -16,12 +16,13 @@ jobs:
       run: gcc -o program fonksiyon.c
 
     - name: Test topla function
-      run: |
-        output=$(echo -e "10\n2\n" | ./program)
-        if [[ "$output" == "12" ]]; then
-          echo "Topla function test passed"
-        else
-          echo "Topla function test failed"
-          echo "$output"
-          exit 1
-        fi
+  run: |
+    output=$(echo -e "10\n2\n" | ./program)
+    if [[ "$output" == "10 + 2 = 12" ]]; then
+      echo "Topla function test passed"
+    else
+      echo "Topla function test failed"
+      echo "$output"
+      exit 1
+    fi
+
