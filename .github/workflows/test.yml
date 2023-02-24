@@ -40,7 +40,8 @@ jobs:
         echo "${GITHUB_ACTOR} Bölme Fonksiyonu: $?" >> not.txt
 
     - name: Not Dosyası Oluştur
-      run: echo "${{ github.actor }} puanınız: ${{ env.total_score }}" >> not.txt
+      run: |
+        echo "${{ github.actor }} puanınız: ${{ env.total_score }}" >> not.txt
 
     - name: Sonucu yükle
       uses: actions/upload-artifact@v2
