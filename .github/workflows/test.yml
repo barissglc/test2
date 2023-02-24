@@ -15,21 +15,21 @@ jobs:
 
     - name: Toplama Fonksiyonu Testi
       run: |
-        gcc -o program program.c
-        if [ $(./program | grep "10 + 2 = 12" | wc -l) -eq 1 ]; then echo "Toplama fonksiyonu testi geçti."; else echo "Toplama fonksiyonu testi başarısız oldu."; fi
+        gcc -o fonksiyon fonksiyon.c
+        if [ $(./fonksiyon | grep "10 + 2 = 12" | wc -l) -eq 1 ]; then echo "Toplama fonksiyonu testi geçti."; else echo "Toplama fonksiyonu testi başarısız oldu."; fi
 
     - name: Çıkarma Fonksiyonu Testi
       run: |
-        gcc -o program program.c
-        if [ $(./program | grep "10 - 2 = 8" | wc -l) -eq 1 ]; then echo "Çıkarma fonksiyonu testi geçti."; else echo "Çıkarma fonksiyonu testi başarısız oldu."; fi
+        gcc -o fonksiyon fonksiyon.c
+        if [ $(./fonksiyon | grep "10 - 2 = 8" | wc -l) -eq 1 ]; then echo "Çıkarma fonksiyonu testi geçti."; else echo "Çıkarma fonksiyonu testi başarısız oldu."; fi
 
     - name: Çarpma Fonksiyonu Testi
       run: |
-        gcc -o program program.c
-        if [ $(./program | grep "10 * 2 = 20" | wc -l) -eq 1 ]; then echo "Çarpma fonksiyonu testi geçti."; else echo "Çarpma fonksiyonu testi başarısız oldu."; fi
+        gcc -o fonksiyon fonksiyon.c
+        if [ $(./fonksiyon | grep "10 * 2 = 20" | wc -l) -eq 1 ]; then echo "Çarpma fonksiyonu testi geçti."; else echo "Çarpma fonksiyonu testi başarısız oldu."; fi
 
     - name: Bölme Fonksiyonu Testi
       run: |
-        gcc -o program program.c
-        if [ $(./program | grep "10 / 2 = 5.00" | wc -l) -eq 1 ]; then echo "Bölme fonksiyonu testi geçti."; else echo "Bölme fonksiyonu testi başarısız oldu."; fi
+        gcc -o fonksiyon fonksiyon.c
+        if [ $(./fonksiyon | grep "10 / 2 = 5.00" | wc -l) -eq 1 ]; then echo "Bölme fonksiyonu testi geçti."; else echo "Bölme fonksiyonu testi başarısız oldu."; fi
 
