@@ -1,6 +1,8 @@
 name: C Kodu Testi
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   test:
@@ -18,23 +20,28 @@ jobs:
         gcc -o fonksiyon fonksiyon.c
         if [ $(./fonksiyon | grep "10 + 2 = 12" | wc -l) -eq 1 ]; then echo "Toplama fonksiyonu testi geçti."; else echo "Toplama fonksiyonu testi başarısız oldu."; fi
         echo "${GITHUB_ACTOR} Toplama Fonksiyonu: $?" >> not.txt
+
     - name: Çıkarma Fonksiyonu Testi
       run: |
         gcc -o fonksiyon fonksiyon.c
         if [ $(./fonksiyon | grep "10 - 2 = 8" | wc -l) -eq 1 ]; then echo "Çıkarma fonksiyonu testi geçti."; else echo "Çıkarma fonksiyonu testi başarısız oldu."; fi
         echo "${GITHUB_ACTOR} Çıkarma Fonksiyonu: $?" >> not.txt
+
     - name: Çarpma Fonksiyonu Testi
       run: |
         gcc -o fonksiyon fonksiyon.c
         if [ $(./fonksiyon | grep "10 * 2 = 20" | wc -l) -eq 1 ]; then echo "Çarpma fonksiyonu testi geçti."; else echo "Çarpma fonksiyonu testi başarısız oldu."; fi
         echo "${GITHUB_ACTOR} Çarpma Fonksiyonu: $?" >> not.txt
+
     - name: Bölme Fonksiyonu Testi
       run: |
         gcc -o fonksiyon fonksiyon.c
         if [ $(./fonksiyon | grep "10 / 2 = 5.00" | wc -l) -eq 1 ]; then echo "Bölme fonksiyonu testi geçti."; else echo "Bölme fonksiyonu testi başarısız oldu."; fi
         echo "${GITHUB_ACTOR} Bölme Fonksiyonu: $?" >> not.txt
+
     - name: Not Dosyası Oluştur
       run: echo "${{ github.actor }} puanınız: ${{ env.total_score }}" >> not.txt
+
     - name: Sonucu yükle
       uses: actions/upload-artifact@v2
       with:
