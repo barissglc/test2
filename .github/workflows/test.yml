@@ -8,7 +8,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      total_score: 100
+      total_score: 95
 
     steps:
     - name: Klonlama
@@ -27,7 +27,7 @@ jobs:
       run: |
         gcc -o fonksiyon fonksiyon.c
         if [ $(./fonksiyon | grep "10 - 2 = 8" | wc -l) -eq 1 ]; then echo "Çıkarma fonksiyonu testi geçti."; else echo "Çıkarma fonksiyonu testi başarısız oldu."; fi
-        echo "${GITHUB_ACTOR} Çıkarma Fonksiyonu: 25" >> not.txt
+        echo "${GITHUB_ACTOR} Çıkarma Fonksiyonu: 20" >> not.txt
 
     - name: Çarpma Fonksiyonu Testi
       run: |
